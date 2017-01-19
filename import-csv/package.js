@@ -6,7 +6,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.1');
-  api.use('mongo', ['server']);
+  api.use('mongo', ['client', 'server']);
   api.use('ecmascript', ['server']);
   api.addFiles('import-csv.js');
   api.addFiles('DENMARK.csv', 'server', {isAsset: true});

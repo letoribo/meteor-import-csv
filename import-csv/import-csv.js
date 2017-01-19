@@ -2,6 +2,7 @@ const TblItem = new Mongo.Collection('items');
 
 if (Meteor.isServer) {
   Meteor.startup(() => {
+  	 if (TblItem.find().count() > 0) return;
     console.log('Importing documents');
     const csvRowSplitter = new RegExp(',(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))');
 
